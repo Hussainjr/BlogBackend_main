@@ -1,41 +1,29 @@
-package com.blog_api_com.entity;
+package com.blog_api_com.payload;
 
-import jakarta.persistence.*;
-import lombok.Data;
 import com.blog_api_com.entity.Category;
+import com.blog_api_com.entity.Comment;
+import com.blog_api_com.entity.User;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import java.util.Set;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Set;
 
-@Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
-public class Post {
+public class PostDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
-
-    @Column(name = "post_title", nullable = false, length = 100)
     private String title;
-
-    @Column(length = 10000)
     private String content;
-
     private String imageName;
     private Date addedDate;
-
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
     private Category category;
-
-    @ManyToOne
     private User user;
-
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Comment> comments = new HashSet<Comment>();
-
 
     public Integer getPostId() {
         return postId;
