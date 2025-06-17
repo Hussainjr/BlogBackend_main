@@ -9,6 +9,7 @@ import com.blog_api_com.entity.User;
 import com.blog_api_com.exception.ResourceNotFoundException;
 import com.blog_api_com.payload.PostDto;
 import com.blog_api_com.service.PostService;
+import org.hibernate.event.spi.PostDeleteEvent;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -106,12 +107,18 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostDto> getPostByUser(Integer userId) {
-        return List.of();
+        User user = this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User", "userId", userId));
+        List<Post> posts = this.postRepo.findByUser(user);
+        List<PostDto> postDtos = posts.stream().map(post -> this.modelMapper.map(post, PostDto.class))
+                                    .collect(Collectors.toList());
+        return postDtos;
     }
 
     @Override
     public List<PostDto> searchPosts(String keyword) {
-        return List.of();
+        List<Post> posts = this.postRepo.findByTitleContaining(keyword);
+        List<PostDto> postDtos = posts.stream().map(post -> postEntityToDto(post)).collect(Collectors.toList());
+        return postDtos;
     }
 
     public Post postDtoToEntity(PostDto postDto){
