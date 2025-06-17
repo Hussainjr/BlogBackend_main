@@ -9,7 +9,6 @@ import com.blog_api_com.entity.User;
 import com.blog_api_com.exception.ResourceNotFoundException;
 import com.blog_api_com.payload.PostDto;
 import com.blog_api_com.service.PostService;
-import org.hibernate.event.spi.PostDeleteEvent;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
