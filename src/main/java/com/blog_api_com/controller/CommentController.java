@@ -2,7 +2,7 @@ package com.blog_api_com.controller;
 
 import com.blog_api_com.payload.ApiResponse;
 import com.blog_api_com.payload.CommentDto;
-import com.blog_api_com.service.impl.CommentService;
+import com.blog_api_com.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

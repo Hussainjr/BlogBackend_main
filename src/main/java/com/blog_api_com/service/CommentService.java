@@ -1,4 +1,4 @@
-package com.blog_api_com.service.impl;
+package com.blog_api_com.service;
 
 import com.blog_api_com.dao.CommentRepo;
 import com.blog_api_com.dao.PostRepo;
@@ -6,10 +6,13 @@ import com.blog_api_com.entity.Comment;
 import com.blog_api_com.entity.Post;
 import com.blog_api_com.exception.ResourceNotFoundException;
 import com.blog_api_com.payload.CommentDto;
+import com.blog_api_com.service.impl.CommentServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class CommentService implements CommentServiceImpl{
+@Service
+public class CommentService implements CommentServiceImpl {
 
     @Autowired private PostRepo postRepo;
     @Autowired private CommentRepo commentRepo;
