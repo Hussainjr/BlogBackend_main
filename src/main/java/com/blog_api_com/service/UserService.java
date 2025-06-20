@@ -1,14 +1,13 @@
-package com.blog_api_com.service.impl;
+package com.blog_api_com.service;
 
 import com.blog_api_com.dao.UserRepo;
 import com.blog_api_com.entity.User;
 import com.blog_api_com.exception.ResourceNotFoundException;
 import com.blog_api_com.payload.UserDto;
-import com.blog_api_com.service.UserServiceImlp;
+import com.blog_api_com.service.impl.UserServiceImlp;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;

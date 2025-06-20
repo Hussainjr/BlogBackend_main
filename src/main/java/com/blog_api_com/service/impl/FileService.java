@@ -1,4 +1,4 @@
-package com.blog_api_com.service;
+package com.blog_api_com.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

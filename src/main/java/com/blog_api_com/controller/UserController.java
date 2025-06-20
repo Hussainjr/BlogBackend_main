@@ -2,7 +2,7 @@ package com.blog_api_com.controller;
 
 import com.blog_api_com.payload.ApiResponse;
 import com.blog_api_com.payload.UserDto;
-import com.blog_api_com.service.impl.UserService;
+import com.blog_api_com.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

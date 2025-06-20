@@ -4,7 +4,7 @@ import com.blog_api_com.config.AppConstant;
 import com.blog_api_com.dao.CategoryRepo;
 import com.blog_api_com.payload.ApiResponse;
 import com.blog_api_com.payload.PostDto;
-import com.blog_api_com.service.FileService;
+import com.blog_api_com.service.impl.FileService;
 import com.blog_api_com.service.PostService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

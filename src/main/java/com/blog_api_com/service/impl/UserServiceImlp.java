@@ -1,4 +1,4 @@
-package com.blog_api_com.service;
+package com.blog_api_com.service.impl;
 
 import com.blog_api_com.payload.UserDto;
 
